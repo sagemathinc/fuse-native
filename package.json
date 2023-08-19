@@ -1,6 +1,6 @@
 {
   "name": "@cocalc/fuse-native",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "description": "Node.js bindings for the FUSE api (Filesystem in Userspace)",
   "main": "index.js",
   "bin": {
