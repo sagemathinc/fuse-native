@@ -1,13 +1,21 @@
 {
   "targets": [{
     "target_name": "fuse",
+    'variables': {
+                    'fuse__include_dirs%': '<!(pkg-config fuse --cflags-only-I | sed s/-I//g)',
+                    'fuse__library_dirs%': '',
+                    'fuse__libraries%': '<!(pkg-config --libs-only-L --libs-only-l fuse)'
+                },
     "include_dirs": [
       "<!(node -e \"require('napi-macros')\")",
-      "<!(node -e \"require('fuse-shared-library/include')\")",
+      "<@(fuse__include_dirs)"
     ],
-    "libraries": [
-      "<!(node -e \"require('fuse-shared-library/lib')\")",
+    'library_dirs': [
+                  '<@(fuse__library_dirs)',
     ],
+    "link_settings": {
+        "libraries": ["<@(fuse__libraries)"]},
+    "libraries": [],
     "sources": [
       "fuse-native.c"
     ],
@@ -29,7 +37,7 @@
     "dependencies": ["fuse"],
     "copies": [{
       "destination": "build/Release",
-      "files": [ "<!(node -e \"require('fuse-shared-library/lib')\")" ],
+      "files": [  ],
     }]
   }]
 }

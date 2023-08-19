@@ -1,7 +1,7 @@
 {
-  "name": "fuse-native",
+  "name": "@cocalc/fuse-native",
   "version": "2.2.6",
-  "description": "Fully maintained fuse bindings for Node that aims to cover the entire FUSE api",
+  "description": "Fuse bindings for the FUSE api",
   "main": "index.js",
   "bin": {
     "fuse-native": "./bin.js"
@@ -15,7 +15,6 @@
   },
   "gypfile": true,
   "dependencies": {
-    "fuse-shared-library": "^1.0.2",
     "nanoresource": "^1.3.0",
     "napi-macros": "^2.0.0",
     "node-gyp-build": "^4.2.0"
@@ -28,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fuse-friends/fuse-native.git"
+    "url": "https://github.com/sagemathinc/fuse-native.git"
   },
   "author": "Mathias Buus (@mafintosh)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fuse-friends/fuse-native/issues"
+    "url": "https://github.com/sagemathinc/fuse-native/issues"
   },
-  "homepage": "https://github.com/fuse-friends/fuse-native"
+  "homepage": "https://github.com/sagemathinc/fuse-native"
 }
