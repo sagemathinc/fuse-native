@@ -8,7 +8,7 @@ computer. It also only supports Linux.
 
 URL: https://github.com/sagemathinc/fuse-native
 
-Upstream: [https://github.com/fuse\-friends/fuse\-native](https://github.com/fuse-friends/fuse-native), but upstream is [no longer maintained](https://github.com/fuse-friends/fuse-native/issues/36).
+Upstream: [https://github.com/fuse\-friends/fuse\-native](https://github.com/fuse-friends/fuse-native), but upstream is [no longer maintained](https://github.com/fuse-friends/fuse-native/issues/36).  However, [this fork](https://github.com/zkochan/fuse-native) might be the most maintained?
 
 ### TESTING
 
