@@ -13,6 +13,7 @@ Upstream: https://github.com/fuse-friends/fuse-native
 NOTES:
 
 - On ARM64 linux, at least, 3 of the tests fail.
+- On x86-64 linux, all the tests pass
 - Upstream seems abandoned.
 - On ARM64 linux upstream doesn't install, due to the shared library binary that they ship, which is wrong.
 

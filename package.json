@@ -1,6 +1,6 @@
 {
   "name": "@cocalc/fuse-native",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Node.js bindings for the FUSE api (Filesystem in Userspace)",
   "main": "index.js",
   "bin": {
@@ -9,6 +9,7 @@
   "scripts": {
     "install": "node-gyp-build",
     "test": "tape test/*.js",
+    "clean": "rm -rf node_modules build",
     "prebuild": "prebuildify --napi --strip",
     "prebuild-ia32": "prebuildify --napi --strip --arch=ia32",
     "configure": "NODE=$(which node) && sudo -E $NODE ./bin.js configure || true"
@@ -17,12 +18,12 @@
   "dependencies": {
     "nanoresource": "^1.3.0",
     "napi-macros": "^2.0.0",
-    "node-gyp-build": "^4.2.0"
+    "node-gyp-build": "^4.6.0",
+    "node-gyp": "^9.4.0"
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
     "prebuildify": "^3.0.4",
-    "standard": "^13.1.0",
     "tape": "^4.12.0"
   },
   "repository": {
