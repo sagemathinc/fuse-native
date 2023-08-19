@@ -1,6 +1,6 @@
 {
   "name": "@cocalc/fuse-native",
-  "version": "2.2.8",
+  "version": "2.3.0",
   "description": "Node.js bindings for the FUSE api (Filesystem in Userspace)",
   "main": "index.js",
   "bin": {
@@ -30,7 +30,18 @@
     "type": "git",
     "url": "https://github.com/sagemathinc/fuse-native.git"
   },
-  "author": "Mathias Buus (@mafintosh)",
+  "author": {
+    "name": "William Stein (SageMath, Inc.)",
+    "email": "wstein@sagemath.com",
+    "url": "https://wstein.org"
+  },
+  "contributors": [
+    {
+      "name": "Mathias Buus",
+      "email": "@mafintosh"
+    }
+  ],
+  "author": " ()",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sagemathinc/fuse-native/issues"

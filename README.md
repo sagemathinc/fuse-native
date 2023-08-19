@@ -8,20 +8,29 @@ computer. It also only supports Linux.
 
 URL: https://github.com/sagemathinc/fuse-native
 
-Upstream: https://github.com/fuse-friends/fuse-native
+Upstream: [https://github.com/fuse\-friends/fuse\-native](https://github.com/fuse-friends/fuse-native), but upstream is [no longer maintained](https://github.com/fuse-friends/fuse-native/issues/36).
 
-NOTES:
+### TESTING
+
+```sh
+pnpm test
+```
 
 - On ARM64 linux, at least, 3 of the tests fail.
-- On x86-64 linux, all the tests pass
-- Upstream seems abandoned.
-- On ARM64 linux upstream doesn't install, due to the shared library binary that they ship, which is wrong.
+- On x86\-64 linux, all the tests pass
+
+### Other Notes
+
+- Upstream seems dead \-\- [https://github.com/fuse\-friends/fuse\-native/issues/36](https://github.com/fuse-friends/fuse-native/issues/36) 
+- On ARM64 linux upstream doesn't install, due to the shared library binary that they ship, which is wrong.  That's the reason I removed all use of shipping shared libraries in an npm module, which is really the wrong way to do things, obviously.
 
 ## API
 
 In order to create a FUSE mountpoint, you first need to create a `Fuse` object that wraps a set of implemented FUSE syscall handlers:
 
-#### `const fuse = new Fuse(mnt, handlers, opts = {})`
+```js
+const fuse = new Fuse(mnt, handlers, opts = {})
+```
 
 Create a new `Fuse` object.
 
@@ -32,21 +41,29 @@ Create a new `Fuse` object.
 ```js
 {
   getattr: function (path, cb) {
-    if (path === '/') return process.nextTick(cb, null, stat({ mode: 'dir', size: 4096 }))
-    if (path === '/test') return process.nextTick(cb, null, stat({ mode: 'file', size: 11 }))
-    return process.nextTick(cb, Fuse.ENOENT)
+    if (path === '/') {
+        cb(0, stat({ mode: 'dir', size: 4096 }));
+        return;
+    }
+    if (path === '/test') {
+        cb(0, stat({ mode: 'file', size: 11 }));
+        return;
+    }
+    cb(Fuse.ENOENT);
   }
 }
 ```
 
 `opts` can be include:
 
-```
+```js
   displayFolder: 'Folder Name', // Add a name/icon to the mount volume on OSX,
   debug: false,  // Enable detailed tracing of operations.
   force: false,  // Attempt to unmount a the mountpoint before remounting.
   mkdir: false   // Create the mountpoint before mounting.
 ```
+
+I'm making extensive use of these bindings in [WebSocketFS](https://github.com/sagemathinc/websocketfs/blob/main/lib/fuse/sftp-fuse.ts), which is _**like sshfs, but over a WebSocket and implemented in Typescript.**_ Look at code here: https://github.com/sagemathinc/websocketfs/tree/main/lib/fuse 
 
 ### FUSE API
 
@@ -282,3 +299,4 @@ MIT for these bindings.
 
 See the [libfuse](https://github.com/libfuse/libfuse) license for Linux/BSD
 for the FUSE shared library license, which is LGPL
+
