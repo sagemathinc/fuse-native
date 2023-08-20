@@ -69,6 +69,8 @@ I'm making extensive use of these bindings in [WebSocketFS](https://github.com/s
 
 Most of the [FUSE api](http://fuse.sourceforge.net/doxygen/structfuse__operations.html) is supported. In general the callback for each op should be called with `cb(returnCode, [value])` where the return code is a number (`0` for OK and `< 0` for errors). See below for a list of POSIX error codes.
 
+Typescript: see [index.d.ts](./index.d.ts).
+
 #### `ops.init(cb)`
 
 Called on filesystem init.
@@ -125,11 +127,11 @@ Same as above but is called when someone stats a file descriptor
 
 Called when a file descriptor is being flushed
 
-#### `ops.fsync(path, fd, datasync, cb)`
+#### `ops.fsync(path, datasync, fd, cb)`
 
 Called when a file descriptor is being fsync'ed.
 
-#### `ops.fsyncdir(path, fd, datasync, cb)`
+#### `ops.fsyncdir(path, datasync, fd, cb)`
 
 Same as above but on a directory
 
