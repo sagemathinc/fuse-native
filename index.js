@@ -188,6 +188,7 @@ class Fuse extends Nanoresource {
     if (this.opts.attrTimeout) options.push('attr_timeout=' + this.opts.attrTimeout)
     if (this.opts.acAttrTimeout) options.push('ac_attr_timeout=' + this.opts.acAttrTimeout)
     if (this.opts.noforget) options.push('noforget')
+    if (this.opts.nonEmpty) options.push('nonempty')
     if (this.opts.remember) options.push('remember=' + this.opts.remember)
     if (this.opts.modules) options.push('modules=' + this.opts.modules)
 

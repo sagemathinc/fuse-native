@@ -23,6 +23,7 @@ pnpm test
 
 - Upstream seems dead \-\- [https://github.com/fuse\-friends/fuse\-native/issues/36](https://github.com/fuse-friends/fuse-native/issues/36) 
 - On ARM64 linux upstream doesn't install, due to the shared library binary that they ship, which is wrong.  That's the reason I removed all use of shipping shared libraries in an npm module, which is really the wrong way to do things, obviously.
+- I added the `nonEmpty` option, which wasn't in upstream.
 
 ## API
 

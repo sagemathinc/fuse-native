@@ -128,6 +128,7 @@ declare namespace Fuse {
     blkdev?: string;
     blksize?: number;
     maxRead?: number;
+    nonEmpty?: boolean;
     fd?: number;
     userId?: number;
     fsname?: string;
