@@ -1,6 +1,6 @@
 {
   "name": "@cocalc/fuse-native",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Node.js bindings for the FUSE api (Filesystem in Userspace)",
   "main": "index.js",
   "bin": {
@@ -18,8 +18,7 @@
   "dependencies": {
     "nanoresource": "^1.3.0",
     "napi-macros": "^2.0.0",
-    "node-gyp-build": "^4.6.0",
-    "node-gyp": "^9.4.0"
+    "node-gyp-build": "^4.8.0"
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
@@ -30,18 +29,13 @@
     "type": "git",
     "url": "https://github.com/sagemathinc/fuse-native.git"
   },
-  "author": {
-    "name": "William Stein (SageMath, Inc.)",
-    "email": "wstein@sagemath.com",
-    "url": "https://wstein.org"
-  },
+  "author": " ()",
   "contributors": [
     {
       "name": "Mathias Buus",
       "email": "@mafintosh"
     }
   ],
-  "author": " ()",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sagemathinc/fuse-native/issues"
